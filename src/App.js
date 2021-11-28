@@ -6,6 +6,7 @@ import Balance from "./Components/Balance";
 import ExpenseCard from "./Components/ExpenseCard";
 import NewTransaction from "./Components/NewTransaction";
 import Transaction from "./Components/Transaction";
+import Footer from "./Components/Footer";
 
 const useStyle = makeStyles({
   header: {
@@ -61,6 +62,7 @@ function App() {
           <Transaction transactions={transactions} deleteTransaction={deleteTransaction} />
         </Box>
       </Box>
+      <Footer />
     </div>
   );
 }
