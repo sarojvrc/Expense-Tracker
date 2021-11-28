@@ -23,11 +23,17 @@ const useStyle = makeStyles({
   },
 });
 
-function ExpenseCard({transactions}) {
+function ExpenseCard({ transactions }) {
   const classes = useStyle();
-  const amount = transactions.map(transaction => transaction.amount);
-  const income = amount.filter(item => item > 0).reduce((acc, item) => (acc += item), 0).toFixed(2);
-  const expense = (amount.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1).toFixed(2);
+  const amount = transactions.map((transaction) => transaction.amount);
+  const income = amount
+    .filter((item) => item > 0)
+    .reduce((acc, item) => (acc += item), 0)
+    .toFixed(2);
+  const expense = (
+    amount.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
+    -1
+  ).toFixed(2);
   return (
     <Box className={classes.container}>
       <Card>
