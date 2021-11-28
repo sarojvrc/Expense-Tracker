@@ -3,6 +3,7 @@ import './App.css';
 import {Typography, makeStyles, Box} from '@material-ui/core';
 import Balance from './Components/Balance';
 import ExpenseCard from './Components/ExpenseCard';
+import NewTransaction from './Components/NewTransaction';
 
 const useStyle = makeStyles({
   header:{
@@ -31,6 +32,7 @@ function App() {
       <Box className={classes.component}>
         <Balance />
         <ExpenseCard />
+        <NewTransaction />
       </Box>
     </div>
   );
