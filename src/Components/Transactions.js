@@ -13,6 +13,9 @@ const useStyle = makeStyles({
     marginTop: 10,
     border: "1px solid #f6f6f6",
   },
+  delete:{
+      color: '#111'
+  }
 });
 
 function Transactions({ transaction, deleteTransaction }) {
@@ -27,7 +30,7 @@ function Transactions({ transaction, deleteTransaction }) {
       style={{ background: `${color}`, color: "White" }}
     >
       <ListItemIcon>
-        <DeleteIcon onClick={() => deleteTransaction(transaction.id)} />
+        <DeleteIcon className={classes.delete} onClick={() => deleteTransaction(transaction.id)} />
       </ListItemIcon>
       <ListItemText primary={transaction.text} />
       <ListItemText primary={amount} />
