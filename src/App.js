@@ -1,23 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import {Typography, makeStyles, Box} from '@material-ui/core';
+import Balance from './Components/Balance';
+import ExpenseCard from './Components/ExpenseCard';
+
+const useStyle = makeStyles({
+  header:{
+    color: 'blue',
+    fontSize: 35,
+    margin: '10px 0',
+    textTransform: 'uppercase'
+  },
+  component:{
+    background: '#fff',
+    width: '70%',
+    padding: 10,
+    borderRadius: '20px'
+  }
+})
 
 function App() {
+
+  const classes = useStyle();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Typography className={classes.header}>
+        Expense Tracker
+      </Typography>
+      <Box className={classes.component}>
+        <Balance />
+        <ExpenseCard />
+      </Box>
     </div>
   );
 }
