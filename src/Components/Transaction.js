@@ -10,7 +10,7 @@ const useStyle = makeStyles({
   },
 });
 
-function Transaction({transactions}) {
+function Transaction({transactions, deleteTransaction}) {
   const classes = useStyle();
 
   return (
@@ -20,7 +20,7 @@ function Transaction({transactions}) {
       <List>
           {
               transactions.map(transaction => {
-                  return <Transactions transaction={transaction} />
+                  return <Transactions key={transaction.id} transaction={transaction} deleteTransaction={deleteTransaction} />
               })
           }
       </List>
