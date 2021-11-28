@@ -39,18 +39,26 @@ function App() {
     { id: 5, text: "Trading", amount: 950 },
   ]);
 
+  const deleteTransaction = (id) => {
+    setTransactions(transactions.filter( transaction => transaction.id !== id));
+  }
+
+  const addTransaction = (transaction) => {
+    setTransactions(transactions => [transaction, ...transactions])
+  }
+
   return (
     <div className="App">
       <Typography className={classes.header}>Expense Tracker</Typography>
       <Box className={classes.component}>
         <Box>
-          <Balance />
-          <ExpenseCard />
-          <NewTransaction />
+          <Balance transactions={transactions} />
+          <ExpenseCard transactions={transactions} />
+          <NewTransaction addTransaction={addTransaction} />
         </Box>
 
         <Box>
-          <Transaction transactions={transactions} />
+          <Transaction transactions={transactions} deleteTransaction={deleteTransaction} />
         </Box>
       </Box>
     </div>
