@@ -10,8 +10,9 @@ const useStyle = makeStyles({
 });
 
 function Footer() {
+    const classes = useStyle();
   return (
-    <Box>
+    <Box className={classes.footer}>
       <Typography>Expense Tracker made by Saroj</Typography>
     </Box>
   );
